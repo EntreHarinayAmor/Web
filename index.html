@@ -25,7 +25,7 @@
 :root{
   /* ---- datos de contacto / enlaces (EDITAR AQUÍ) ---- */
   --whatsapp-number: "59891685589";        /* WHATSAPP_NUMBER  -> formato internacional sin + ni espacios, ej 59891685589 */
-  --whatsapp-channel-url: "https://chat.whatsapp.com/CRtm4ff9IjQ7HdSxIPqCzd?s=sw&p=a&mlu=4";              /* WHATSAPP_CHANNEL_URL -> enlace real del grupo/canal de novedades */
+  --whatsapp-channel-url: "#";              /* WHATSAPP_CHANNEL_URL -> enlace real del canal de difusión */
 }
 
 /* =========================================================
@@ -203,17 +203,8 @@ header{
 }
 .nav-links a:hover::after{ transform: scaleX(1); }
 .nav-cta{
-  padding: 10px 30px;
+  padding: 10px 22px;
   font-size:.85rem;
-  min-width: 128px;
-  justify-content: center;
-  text-align: center;
-}
-.nav-links a.nav-cta{
-  color: var(--crema);
-}
-.nav-links a.nav-cta:hover{
-  color: var(--crema);
 }
 .burger{
   display:none;
@@ -351,48 +342,12 @@ section{ padding: 88px 0; position:relative; z-index:1; }
 .product-info h3{ font-size: 1.9rem; margin-bottom: 6px; }
 .product-info .sub{ font-weight:700; color:var(--dorado); margin-bottom: 14px; }
 .product-info p.desc{ color:#6b503c; margin-bottom: 26px; }
-.qty-selector{
-  display:flex;
-  gap: 12px;
-  margin-bottom: 22px;
-  flex-wrap: wrap;
-}
-.qty-btn{
-  font-family: var(--font-sans);
-  font-weight:700;
-  font-size: .88rem;
-  padding: 11px 20px;
-  border-radius: 999px;
-  border: 1.5px solid var(--camel);
-  background: var(--marfil);
-  color: var(--marron);
-  cursor:pointer;
-  transition: background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease;
-}
-.qty-btn .off{ color: var(--dorado); font-weight:800; }
-.qty-btn:hover{ transform: translateY(-1px); border-color: var(--dorado); }
-.qty-btn.active{
-  background: var(--marron);
-  border-color: var(--marron);
-  color: var(--marfil);
-}
-.qty-btn.active .off{ color: var(--dorado-claro); }
-
 .price-row{
   display:flex;
   align-items:baseline;
   gap: 6px;
   margin-bottom: 28px;
-  flex-wrap: wrap;
 }
-.price-row .original-price{
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  color: #a08863;
-  text-decoration: line-through;
-  margin-right: 6px;
-}
-.price-row .original-price:empty{ display:none; margin:0; }
 .price-row .currency{ font-family: var(--font-serif); font-size: 1.4rem; color: var(--dorado); }
 .price-row .amount{ font-family: var(--font-serif); font-size: 3.2rem; font-weight:600; color: var(--marron-oscuro); }
 .price-row .unit{ color:#8a7357; font-size:.95rem; margin-left:4px; }
@@ -541,43 +496,6 @@ section{ padding: 88px 0; position:relative; z-index:1; }
 .preserve-item span.small{ font-size: .85rem; color:#8a7357; }
 
 /* =========================================================
-   METODOS DE PAGO
-   ========================================================= */
-.payment-grid{
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 760px;
-  margin: 0 auto;
-}
-.payment-card{
-  background: var(--marfil);
-  border: 1px solid var(--beige);
-  border-radius: 10px;
-  padding: 34px 30px;
-  text-align:center;
-}
-.payment-card .icon{ font-size: 1.9rem; display:block; margin-bottom: 12px; }
-.payment-card h4{ font-family: var(--font-serif); font-size: 1.15rem; color: var(--marron-oscuro); margin-bottom: 8px; }
-.payment-card p{ font-size: .92rem; color:#7a6248; }
-.payment-methods{
-  margin-top: 16px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap: 8px;
-}
-.payment-methods li{
-  font-size: .82rem;
-  font-weight:700;
-  color: var(--marron);
-  background: var(--beige-suave);
-  border: 1px solid var(--beige);
-  padding: 6px 14px;
-  border-radius: 999px;
-}
-
-/* =========================================================
    CANAL DE DIFUSION
    ========================================================= */
 .channel{ background: var(--marron-oscuro); color: var(--marfil); }
@@ -692,7 +610,6 @@ footer .thanks{
   .features-grid{ grid-template-columns: 1fr 1fr; }
   .steps{ grid-template-columns: 1fr; }
   .info-grid{ grid-template-columns: 1fr; }
-  .payment-grid{ grid-template-columns: 1fr; }
   .channel-grid{ grid-template-columns: 1fr; }
   .channel .section-head{ text-align:center; margin: 0 auto 26px; }
   .channel p.desc{ margin-left:auto; margin-right:auto; }
@@ -744,7 +661,7 @@ footer .thanks{
       <a href="#frilloas">Frilloas</a>
       <a href="#como-pedir">Cómo pedir</a>
       <a href="#entregas">Entregas</a>
-      <a href="#canal">Novedades</a>
+      <a href="#canal">Canal de difusión</a>
       <a href="#" class="btn btn-primary nav-cta" id="navWhatsapp">Pedir <span class="heart">♡</span></a>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menú">
@@ -795,17 +712,10 @@ footer .thanks{
           <h3>Bandeja x15 unidades</h3>
           <p class="sub">Finas, suaves y listas para rellenar</p>
           <p class="desc">Preparadas de a poco, en casa, con la receta de siempre. Perfectas para el desayuno, la merienda o para compartir con quien quieras.</p>
-
-          <div class="qty-selector" role="group" aria-label="Elegí la cantidad">
-            <button type="button" class="qty-btn active" id="qtyOne" data-price="200" data-original="" data-unit="1 bandeja x15">Una bandeja</button>
-            <button type="button" class="qty-btn" id="qtyTwo" data-price="360" data-original="400" data-unit="2 bandejas x15">Dos bandejas <span class="off">(10% OFF)</span></button>
-          </div>
-
           <div class="price-row">
-            <span class="original-price" id="originalPrice"></span>
             <span class="currency">$</span>
-            <span class="amount" id="priceAmount">200</span>
-            <span class="unit" id="priceUnit">1 bandeja x15</span>
+            <span class="amount">220</span>
+            <span class="unit">bandeja x15</span>
           </div>
           <a href="#" class="btn btn-primary" id="productWhatsapp">Pedir ahora</a>
         </div>
@@ -947,45 +857,17 @@ footer .thanks{
     </div>
   </section>
 
-  <!-- METODOS DE PAGO -->
-  <section id="pagos" class="info-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Formas de pago</span>
-        <h2>¿Cómo podés pagar?</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="payment-grid">
-        <div class="payment-card reveal">
-          <span class="icon">💵</span>
-          <h4>Efectivo</h4>
-          <p>Al momento de retirar o recibir tu pedido.</p>
-        </div>
-        <div class="payment-card reveal">
-          <span class="icon">🏦</span>
-          <h4>Transferencia</h4>
-          <p>Coordinamos los datos por WhatsApp al confirmar tu pedido.</p>
-          <ul class="payment-methods">
-            <li>Prex</li>
-            <li>BROU</li>
-            <li>Mercado Pago</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CANAL DE DIFUSION -->
   <section id="canal" class="channel">
     <div class="container channel-grid">
       <div class="reveal">
         <div class="section-head">
           <span class="eyebrow" style="color:var(--dorado-claro)">Comunidad</span>
-          <h2>Sumate a nuestro grupo <span class="heart" style="color:var(--dorado-claro)">♡</span></h2>
+          <h2>Sumate a nuestro canal <span class="heart" style="color:var(--dorado-claro)">♡</span></h2>
           <div class="divider"></div>
         </div>
         <p class="desc">Enterate de nuestras novedades, promociones, próximos productos, fechas de pedidos y mucho más.</p>
-        <a href="#" class="btn btn-gold" id="channelBtn">Únete al grupo</a>
+        <a href="#" class="btn btn-gold" id="channelBtn">Unirme al canal</a>
       </div>
 
       <div class="qr-box reveal">
@@ -1018,7 +900,8 @@ footer .thanks{
     <p class="slogan">Casero, rico y hecho con amor <span class="heart">♡</span></p>
     <div class="footer-links">
       <a href="#" id="footerWhatsapp">WhatsApp</a>
-      <a href="#" id="footerChannel">Novedades</a>
+      <a href="#" id="footerChannel">Canal de difusión</a>
+      <a href="#" id="footerInstagram">Instagram</a>
     </div>
     <p class="thanks">Gracias por elegir un emprendimiento hecho con cariño.</p>
   </div>
@@ -1039,8 +922,9 @@ footer .thanks{
 
   var WHATSAPP_NUMBER       = cssVar('--whatsapp-number');
   var WHATSAPP_CHANNEL_URL  = cssVar('--whatsapp-channel-url');
+  var INSTAGRAM_URL         = cssVar('--instagram-url');
 
-  var WHATSAPP_MESSAGE = "Hola! Quiero hacer un pedido: ";
+  var WHATSAPP_MESSAGE = "Hola! Quiero hacer un pedido de Frilloas Caseras 🥞♡";
   var WHATSAPP_LINK = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
   var waTargets = [
@@ -1065,26 +949,11 @@ footer .thanks{
     }
   });
 
-  /* ---------------- Selector de cantidad / precio ---------------- */
-  var qtyButtons = document.querySelectorAll('.qty-btn');
-  var priceAmount = document.getElementById('priceAmount');
-  var priceUnit = document.getElementById('priceUnit');
-  var originalPrice = document.getElementById('originalPrice');
-
-  qtyButtons.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      qtyButtons.forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-
-      var price = btn.getAttribute('data-price');
-      var original = btn.getAttribute('data-original');
-      var unit = btn.getAttribute('data-unit');
-
-      priceAmount.textContent = price;
-      priceUnit.textContent = unit;
-      originalPrice.textContent = original ? ('$' + original) : '';
-    });
-  });
+  var igEl = document.getElementById('footerInstagram');
+  if(igEl){
+    igEl.href = INSTAGRAM_URL;
+    if(INSTAGRAM_URL !== '#'){ igEl.target = "_blank"; igEl.rel = "noopener"; }
+  }
 
   /* ---------------- Menú móvil ---------------- */
   var burger = document.getElementById('burger');
@@ -1121,3 +990,4 @@ footer .thanks{
 
 </body>
 </html>
+M
